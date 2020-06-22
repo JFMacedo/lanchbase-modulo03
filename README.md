@@ -22,6 +22,9 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
   # Clonar o repositório
   $ git clone https://github.com/JFMacedo/lanchbase-modulo03.git
 
+  # Entrar na pasta do projeto
+  $ cd launchbase-modulo03
+
   # Instalar as dependencias
   $ npm install
 
