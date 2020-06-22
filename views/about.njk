@@ -1,0 +1,23 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>Sobre - Rocketseat</title>
+{% endblock %}
+
+{% block content %}  
+  <div class="content page-about">
+    <img src="{{ data.img }}" alt="Logo {{ data.name }}">
+    <h1>{{ data.name }}</h1>
+    <p>{{ data.description }}</p>
+    <ul>
+      {% for tech in data.techs %}
+        <li>{{ tech }}</li>
+      {% endfor %}
+    </ul>
+    <div class="links">
+      {% for link in data.links %}
+        <a href="{{ link.link }}">{{ link.text }}</a>
+      {% endfor %}
+    </div><!--links-->
+  </div><!--content-->
+{% endblock %}

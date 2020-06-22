@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --main-color: #6C4FBB;
+  --link-color: #15FD84;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #2E2D2F;
+  color: #FFFFFF;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-color);
+}
+
+header {
+  padding: 30px;
+  text-align: center;
+  background-color: var(--main-color);
+}
+
+header a {
+  margin: 0 15px;
+  transition: 400ms;
+  color: #FFFFFF;
+}
+
+/* Page about */
+.page-about {
+  text-align: center;
+}
+
+.page-about img {
+  margin-bottom: 30px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.page-about h1 {
+  margin-bottom: 10px;
+  color: var(--main-color);
+}
+
+.page-about p {
+  width: 500px;
+  margin: 0 auto 10px;
+}
+
+.page-about ul {
+  display: inline-block;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.page-about a {
+  position: relative;
+  margin: 0 15px;
+  color: #FFFFFF;
+}
+
+.page-about a::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  opacity: 0;
+  transition: 200ms;
+  background-color: #FFFFFF;
+}
+
+.page-about a:hover::after {
+  left: 0;
+  width: 100%;
+  opacity: 1;
+}
+
+/* Page courses */
+.page-courses {
+  text-align: center;
+}
+
+.page-courses h1 {
+  margin-bottom: 30px;
+}
+
+.page-courses .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  max-width: 1000px;
+  height: 85%;
+  margin: 0 auto;
+}
+
+.page-courses .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid var(--main-color);
+  background-color: #00000055;
+  transition: 400ms;
+}
+
+.page-courses .card:hover {
+  border: 2px solid var(--link-color);
+  background-color: #00000077;
+}
+
+.page-courses .card .img {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.page-courses .card .description {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.page-courses .card .info {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.page-courses .card .info .card-price {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+  transition: 400ms;
+}
+
+.page-courses .card:hover .info .card-price {
+  color: #000000;
+  background-color: var(--link-color);
+}
+
+/* Page not-found */
+.page-not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.error a {
+  color: #FFFFFF;
+}
+
+.error a::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  opacity: 0;
+  transition: 200ms;
+  background-color: #FFFFFF;
+}
+
+.error a:hover::after {
+  left: 0;
+  width: 100%;
+  opacity: 1;
+}
+
+/* Modal */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #00000099;
+  transition: 400ms;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: absolute;
+  top: 5vh;
+  bottom: 5vh;
+  left: 20vh;
+  right: 20vh;
+  background-color: #2E2D2F;
+  transition: 400ms;
+}
+
+.modal.maximized {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #2E2D2F;
+}
+
+.modal-controls {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 60px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.modal-overlay iframe {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  height: calc(100% - 20px);
+  background-color: #FEFDFF;
+}

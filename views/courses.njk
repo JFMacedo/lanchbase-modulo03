@@ -1,0 +1,42 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>Cursos - Rocketseat</title>
+  <script src="https://kit.fontawesome.com/19f0b7e996.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}  
+  <div class="content page-courses">
+    <h1>Cursos da Rocketseat</h1>
+    <div class="cards">
+      {% for item in items %}
+        <div class="card" id="{{ item.id }}">
+          <div class="img">
+            <img src="{{ item.img }}" alt="logo {{ item.id }}">
+          </div><!--img-->
+          <div class="description">
+            <p>{{ item.description }}</p>
+          </div><!--description-->
+          <div class="info">
+            <p>{{ item.modules }}</p>
+            <p class="card-price">{{ item.price }}</p>
+          </div><!--info-->
+        </div><!--card-->
+      {% endfor %}
+    </div><!--cards-->
+  </div><!--content-->
+
+  <div class="modal-overlay">
+    <div class="modal">
+      <div class="modal-controls">
+        <i class="far fa-window-maximize maximize-modal"></i>
+        <i class="fas fa-times close-modal"></i>
+      </div><!--close-modal-->
+      <div class="modal-content">
+        <iframe src="" frameborder="0"></iframe>
+      </div><!--modal-content-->
+    </div><!--modal-->
+  </div><!--modal-overlay-->
+
+  <script src="scripts.js"></script>
+{% endblock %}
