@@ -9,7 +9,9 @@ server.use(express.static('public'))
 server.set('view engine', 'njk')
 
 nunjucks.configure('views', {
-  express: server
+  express: server,
+  autoescape: false,
+  noCache: true
 })
 
 server.get('/', (req, res) => {
@@ -29,6 +31,16 @@ server.get('/about', (req, res) => {
     ]
   }
   res.render('about', { data })
+})
+
+server.get("/course/:id", (req, res) => {
+  const id = req.params.id;
+  
+  const course = courses.find((course) => {
+    return course.id == id
+  })
+
+  return res.render('course', { item: course })
 })
 
 server.use((req, res) => {

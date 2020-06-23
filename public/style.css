@@ -75,13 +75,15 @@ header a {
   text-align: left;
 }
 
-.page-about a {
+.page-about a,
+.page-course a {
   position: relative;
   margin: 0 15px;
   color: #FFFFFF;
 }
 
-.page-about a::after {
+.page-about a::after,
+.page-course a::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -94,7 +96,8 @@ header a {
   background-color: #FFFFFF;
 }
 
-.page-about a:hover::after {
+.page-about a:hover::after,
+.page-course a:hover::after {
   left: 0;
   width: 100%;
   opacity: 1;
@@ -127,6 +130,7 @@ header a {
   border-radius: 20px;
   border: 2px solid var(--main-color);
   background-color: #00000055;
+  cursor: pointer;
   transition: 400ms;
 }
 
@@ -168,6 +172,51 @@ header a {
   background-color: var(--link-color);
 }
 
+/* Page-course */
+.page-course {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.page-course h1 {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+
+.page-course p {
+  font-size: 20px;
+}
+
+.page-course img {
+  margin-bottom: 50px;
+}
+
+.page-course a {
+  font-size: 20px;
+}
+
+.page-course .description {
+  margin-bottom: 50px;
+}
+
+.page-course .info {
+  margin-bottom: 50px;
+  line-height: 50px;
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.page-course .card-price {
+  height: 100%;
+  border-radius: 20px;
+  background-color: #FFFFFF11;
+}
+
 /* Page not-found */
 .page-not-found {
   display: flex;
@@ -197,61 +246,4 @@ header a {
   left: 0;
   width: 100%;
   opacity: 1;
-}
-
-/* Modal */
-.modal-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  visibility: hidden;
-  background-color: #00000099;
-  transition: 400ms;
-}
-
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal {
-  position: absolute;
-  top: 5vh;
-  bottom: 5vh;
-  left: 20vh;
-  right: 20vh;
-  background-color: #2E2D2F;
-  transition: 400ms;
-}
-
-.modal.maximized {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #2E2D2F;
-}
-
-.modal-controls {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 60px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.modal-overlay iframe {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  height: calc(100% - 20px);
-  background-color: #FEFDFF;
 }

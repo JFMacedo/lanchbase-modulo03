@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>{{ item.id }} - Rocketseat</title>
+  <script src="https://kit.fontawesome.com/19f0b7e996.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="page-course" id="{{ item.id }}">
+      <h1>{{ item.id }}</h1>
+      <div class="description">
+        <p>{{ item.description }}</p>
+      </div><!--description-->
+      <div class="img">
+        <img src="{{ item.img }}" alt="logo {{ item.id }}">
+      </div><!--img-->
+      <div class="info">
+        <p>{{ item.modules }}</p>
+        <p class="card-price">{{ item.price }}</p>
+      </div><!--info-->
+      <a href="https://rocketseat.com.br/{{ item.id }}" target="_blank">Acessar pagina do curso</a>
+    </div><!--page-course-->
+
+  <script src="scripts.js"></script>
+{% endblock %}
